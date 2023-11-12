@@ -5,41 +5,5 @@ public class SupplyChain
     public static void main(String args[])
     {
         //System.out.println("Hello, Derek! This is the WOPR speaking.");
-
-        class Medicine
-        {
-            private String mMedicineName;
-
-            public Medicine(String medicineName) 
-            {
-                mMedicineName = medicineName;
-            }
-
-            public String getMedicineName() 
-            {
-                return mMedicineName;
-            }
-
-
-            public double minimumTemperature() 
-            {
-                return 0.0;
-            }
-
-            public double maximumTemperature() 
-            {
-                return 100.0;
-            }
-    
-            public boolean isTemperatureRangeAcceptable(Double lowTemperature, Double highTemperature) {
-                if (this.minimumTemperature() <= lowTemperature && 
-                    highTemperature <= this.maximumTemperature()) 
-                {
-                    return true;
-                }
-                return false;
-            }
-        }
-        
     }
 }
