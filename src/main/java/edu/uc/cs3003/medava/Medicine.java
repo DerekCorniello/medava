@@ -1,8 +1,9 @@
 package edu.uc.cs3003.medava;
 
-public class Medicine 
+public abstract class Medicine 
 {
     private String mMedicineName;
+    public abstract MedicineSchedule getSchedule();
 
             // Medicine Class Constructor
             public Medicine(String medicineName) 
