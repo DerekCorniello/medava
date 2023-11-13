@@ -1,0 +1,10 @@
+- If a static method cannot access an instance (or its fields), what is the point in using them? 
+	- Why not just define a regular function?
+- Giving a variable a static field would normally (or in C languages?) mean it is the same across instances, so how does that change for a function?
+- What sort of structure do enumerables have in memory? 
+	- Is their storage worth making a whole other type for with valid values compared to the processing time?
+- If reflection is not time-effective, when and why would I use it?
+	- Give an example?
+- How close are interfaces to the object class?
+	- What do interfaces have that objects don't?
+- How are we able to make an abstract class?
