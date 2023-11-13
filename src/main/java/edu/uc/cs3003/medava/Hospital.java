@@ -18,6 +18,26 @@ public class Hospital
     // Inputs: a transporter
     // No output
     
+    void receive(Transporter t) 
+    {
+        while (!t.isEmpty()) 
+        {
+            Shippable unloaded = t.unload();
+            System.out.println(String.format("Checking whether Hospital can receive %s.", unloaded.getMedicineName()));
+            if (unloaded.getSchedule() != MedicineSchedule.Uncontrolled) 
+            {
+                System.out.println(String.format("Hospital cannot receive controlled substances and %s is a %s.",
+                        unloaded.getMedicineName(), unloaded.getSchedule().asString()));
+            } 
+            
+            else 
+            {
+                System.out.println(String.format("Accepted a shipment of %s.", unloaded.getMedicineName()));
+            }
+        }
+    }
+
+    /*
     void receive(Transporter t) {
         while (!t.isEmpty()) {
             try {
@@ -39,7 +59,7 @@ public class Hospital
             }
         }
     }
-
+    */
     public boolean send(Transporter t) {
         Medicine advil = new Ibuprofen();
         if (t.load(advil)) {
