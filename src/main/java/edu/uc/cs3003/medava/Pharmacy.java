@@ -13,17 +13,12 @@ public class Pharmacy
     // 'sends' the transporter to the hospital
     // Inputs: string of medicine name
     // Outputs: boolean of if successful or not
-    public boolean send(Transporter t) 
-    {
+    public boolean send(Transporter t) {
         Medicine advil = new Ibuprofen();
-        if (t.load(advil)) 
-        {
+        if (t.load(advil)) {
             System.out.println(String.format("Sending %s on the %s transporter.", advil.getMedicineName(),
                     t.getTransporterName()));
-        } 
-
-        else 
-        {
+        } else {
             System.out.println(String.format("Cannot load %s on to the %s transporter.", advil.getMedicineName(),
                     t.getTransporterName()));
             return false;
@@ -33,10 +28,7 @@ public class Pharmacy
         if (t.load(activase)) {
             System.out.println(String.format("Sending %s on the %s transporter.", activase.getMedicineName(),
                     t.getTransporterName()));
-        } 
-
-        else 
-        {
+        } else {
             System.out.println(String.format("Cannot load %s on to the %s transporter.", activase.getMedicineName(),
                     t.getTransporterName()));
             return false;
@@ -46,11 +38,18 @@ public class Pharmacy
         if (t.load(oxycontin)) {
             System.out.println(String.format("Sending %s on the %s transporter.", oxycontin.getMedicineName(),
                     t.getTransporterName()));
-        }
-         
-        else 
-        {
+        } else {
             System.out.println(String.format("Cannot load %s on to the %s transporter.", oxycontin.getMedicineName(),
+                    t.getTransporterName()));
+            return false;
+        }
+
+        Jarvik heart = new Jarvik("01j9a9lk71");
+        if (t.load(heart)) {
+            System.out.println(String.format("Sending %s on the %s transporter.", heart.getMedicineName(),
+                    t.getTransporterName()));
+        } else {
+            System.out.println(String.format("Cannot load %s on to the %s transporter.", heart.getMedicineName(),
                     t.getTransporterName()));
             return false;
         }
@@ -65,7 +64,7 @@ public class Pharmacy
     // Outputs: None
     void receive(Transporter t) {
         while (!t.isEmpty()) {
-            Medicine unloaded = t.unload();
+            Medicine unloaded = (Medicine)t.unload();
             System.out.println(String.format("Receiving %s off the %s transporter.", unloaded.getMedicineName(), t.getTransporterName()));
         }
     }
